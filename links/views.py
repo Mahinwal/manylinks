@@ -43,25 +43,30 @@ def signup(request):
                 messages.info(request, 'Email already taken.')
                 return redirect('signup')
             else:
+                print("here")
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save()
 
                 user_login = authenticate(username=username, password=password)
                 login(request, user_login)
-                redirect('profile')
+                return redirect('profile')
     else:
         return render(request, 'links/signup.html', {})
 
 
 @login_required(login_url='signin')    
 def profile(request):
-    user_profile = Profile.objects.get(user=request.user)
-    current_user = request.user
-    
+
     context = {
-        'user_profile': user_profile,
-        'user': current_user,
-        }
+        'user': request.user,
+    }
+
+    if Profile.objects.filter(user=request.user).exists():
+        user_profile = Profile.objects.get(user=request.user)
+                
+        context = {
+            'user_profile': user_profile,
+            }
     
     return render(request, 'links/profile.html', context)
     
