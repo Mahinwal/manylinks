@@ -34,4 +34,4 @@ git clone https://github.com/Mahinwal/manylinks.git
 ### Finally, run the development server :
 ```$ python manage.py runserver```
 
-### The project will be available at : http://localhost:8000
+### The project will be available at : http://localhost:8000 or http://127.0.0.1:8000/
