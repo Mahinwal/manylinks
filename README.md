@@ -5,7 +5,7 @@ Personal project to store multiple social media links.
 
 Running the Project Locally
 ### First, clone the repository to your local machine :
-git clone [https://github.com/SAzghour/Django-Project-Portfolio.git](https://github.com/Mahinwal/manylinks.git)
+git clone https://github.com/Mahinwal/manylinks.git
 
 ### Create a virtual environment :
 ```$ python -m virtualenv venv```
